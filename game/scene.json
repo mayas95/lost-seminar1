@@ -83,10 +83,21 @@
     {"scale": [1.3, 0.2, 2.5], "aabb": {"max": [1.3, 0.2, 2.5], "min": [-1.3, -0.2, -2.5]}, "texture": 1, "mesh": 0, "translation": [0, 0, 7.5], "type": "model"},
     {"scale": [2.5, 0.2, 1.3], "aabb": {"max": [2.5, 0.2, 1.3], "min": [-2.5, -0.2, -1.3]}, "texture": 1, "mesh": 0, "translation": [7.5, 0, 0], "type": "model"},
     {"scale": [2.5, 0.2, 1.3], "aabb": {"max": [2.5, 0.2, 1.3], "min": [-2.5, -0.2, -1.3]}, "texture": 1, "mesh": 0, "translation": [-7.5, 0, 0], "type": "model"},
-    {"scale": [1.3, 0.2, 2.5], "aabb": {"max": [1.3, 0.2, 2.5], "min": [-1.3, -0.2, -2.5]}, "texture": 1, "mesh": 0, "translation": [0, 0, -7.5], "type": "model"}
+    {"scale": [1.3, 0.2, 2.5], "aabb": {"max": [1.3, 0.2, 2.5], "min": [-1.3, -0.2, -2.5]}, "texture": 1, "mesh": 0, "translation": [0, 0, -7.5], "type": "model"},
+    {
+        "type": "light",
+        "position": [3, 5,-3],
+        "ambient": 1,
+        "diffuse": 1,
+        "specular": 1,
+        "shininess": 0,
+        "color": [255, 255, 255],
+        "attenuatuion": [1.0, 0, 1.0]
+    }
   ],
   "textures": [
-    "../common/images/crate-diffuse.png",
+    "../common/images/floor.png",
+    "../common/images/sci-fi-text.png",
     "../common/images/grass.png"
   ],
   "meshes": [

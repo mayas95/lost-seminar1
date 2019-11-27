@@ -3,6 +3,7 @@ import Application from '../common/Application.js';
 import Renderer from './Renderer.js';
 import Physics from './Physics.js';
 import Camera from './Camera.js';
+import Light from './Light.js';
 import SceneLoader from './SceneLoader.js';
 import SceneBuilder from './SceneBuilder.js';
 
@@ -33,6 +34,8 @@ class App extends Application {
         this.scene.traverse(node => {
             if (node instanceof Camera) {
                 this.camera = node;
+            } else if (node instanceof Light) {
+              this.light = node;
             }
         });
 
@@ -73,7 +76,7 @@ class App extends Application {
 
     render() {
         if (this.scene) {
-            this.renderer.render(this.scene, this.camera);
+            this.renderer.render(this.scene, this.camera, this.light);
         }
     }
 

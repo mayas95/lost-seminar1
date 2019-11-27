@@ -3,6 +3,7 @@ import Mesh from './Mesh.js';
 import Node from './Node.js';
 import Model from './Model.js';
 import Camera from './Camera.js';
+import Light from './Light.js';
 
 import Scene from './Scene.js';
 
@@ -19,6 +20,9 @@ export default class SceneBuilder {
                 const mesh = new Mesh(this.spec.meshes[spec.mesh]);
                 const texture = this.spec.textures[spec.texture];
                 return new Model(mesh, texture, spec);
+            }
+            case 'light': {
+                return new Light(spec);
             }
             default: return new Node(spec);
         }
