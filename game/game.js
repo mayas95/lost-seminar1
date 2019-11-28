@@ -55,8 +55,21 @@ class App extends Application {
         this.renderer.prepare(this.scene);
     }
 
+    // enableCamera() {
+    //     console.log('enableCamera', this.canvas);
+    //     this.canvas.requestPointerLock();
+    // }
+
     enableCamera() {
-        // console.log('enableCamera');
+        this.camera.enable();
+        this.canvas.click();
+    }
+
+    canvasClickListener() {
+        this.canvas.requestPointerLock = this.canvas.requestPointerLock ||
+            this.canvas.mozRequestPointerLock ||
+            this.canvas.webkitRequestPointerLock;
+        // Ask the browser to lock the pointer)
         this.canvas.requestPointerLock();
     }
 
@@ -114,8 +127,18 @@ class App extends Application {
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.querySelector('canvas');
     const app = new App(canvas);
-    const gui = new dat.GUI();
-    gui.add(app, 'enableCamera');
+    // const gui = new dat.GUI();
+    // gui.add(app, 'enableCamera');
     // console.log('canvas: ', canvas);
     // console.log('gui', gui);
+    // app.enableCamera();
+    // setTimeout(function() {
+    //     canvas.click();
+    //     app.enableCamera();
+    //   }, 2000);
+
+    setTimeout(function() {
+        canvas.addEventListener('click', app.canvasClickListener.bind(app), false);
+        app.enableCamera();
+      }, 2000);
 });
