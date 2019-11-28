@@ -22,6 +22,7 @@ body, html {
     position: fixed;
     left: 20px;
     top: 20px;
+    width: 300px;
 }
 
 a.back {
@@ -32,8 +33,115 @@ a.back {
     cursor: pointer;
     text-decoration: none;
     color: #000;
+    width: 36px;
+    margin-bottom: 10px;
 }
 
 a.back:hover {
     background: #ddd;
+}
+
+#visual-timer {
+    background-image: linear-gradient(to right,#5433ff,#a5fecb);
+    height: 1rem;
+    /*margin: 0 50px; */
+    width: 100%;
+
+}
+
+.width-change {
+    -webkit-animation-name: widthChange; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 60s; /* Safari 4.0 - 8.0 */
+    animation-name: widthChange;
+    animation-duration: 60s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes widthChange {
+    0%   {width: 100%;}
+    25%  {width: 75%;}
+    50%  {width: 50%;}
+    75%  {width: 25%;}
+    100% {width: 0%;}
+}
+
+/* Standard syntax */
+@keyframes widthChange {
+    0%   {width: 100%;}
+    25%  {width: 75%;}
+    50%  {width: 50%;}
+    75%  {width: 25%;}
+    100% {width: 0%;}
+}
+
+#timer-wrapper {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, -50%);
+}
+
+#time {
+    font-size: 50px;
+    text-align: center;
+}
+.end
+{
+    position: absolute;
+    left:    0;
+    right:   0;
+    z-index : 2;
+    filter : alpha(opacity=100);
+    POSITION: fixed;
+    bottom: 0;
+    width=100%;
+    height=100%;
+}
+.hide {
+  display: none;
+}
+
+.lost {
+text-align: center;
+    margin: auto;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+
+/*
+XXXXXXXXXX
+*/
+.end
+{
+    position: absolute;
+    left:    0;
+    right:   0;
+    z-index : 100;
+    filter : alpha(opacity=100);
+    POSITION: fixed;
+    bottom: 0;
+    width=100%;
+    height=100%;
+}
+.hide {
+  display: none;
+}
+
+.win {
+text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index:3;
+    background-color: green;
 }

@@ -25,14 +25,18 @@ class App extends Application {
 
     endGameSuccess() {
         this.camera.disable();
-        // console.log('SUCCESS');
+        document.getElementById('winning').classList.remove('hide');
+    }
+    endGameFail() {
+        this.camera.disable();
+        document.getElementById('ending').classList.remove('hide');
     }
 
     async load(uri) {
         const scene = await new SceneLoader().loadScene('scene.json');
         const builder = new SceneBuilder(scene);
         this.scene = builder.build();
-        this.physics = new Physics(this.scene, 0);
+        this.physics = new Physics(this.scene, 0, false);
 
         // Find first camera.
         this.camera = null;
@@ -45,19 +49,23 @@ class App extends Application {
         });
 
         this.camera.aspect = this.aspect;
+        // this.camera.enable();
+        // this.enableCamera();
         this.camera.updateProjection();
         this.renderer.prepare(this.scene);
     }
 
     enableCamera() {
+        // console.log('enableCamera');
         this.canvas.requestPointerLock();
     }
 
     pointerlockchangeHandler() {
+        // console.log('handler');
         if (!this.camera) {
             return;
         }
-
+        // console.log('document.pointerLockElement: ', document.pointerLockElement);
         if (document.pointerLockElement === this.canvas) {
             this.camera.enable();
         } else {
@@ -77,6 +85,9 @@ class App extends Application {
         if (this.physics) {
             if (this.physics.counter === 3) {
               this.endGameSuccess();
+            }
+            if (this.physics.die) {
+              this.endGameFail();
             }
             this.physics.update(dt);
         }
@@ -105,4 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new App(canvas);
     const gui = new dat.GUI();
     gui.add(app, 'enableCamera');
+    // console.log('canvas: ', canvas);
+    // console.log('gui', gui);
 });

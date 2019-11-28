@@ -16,8 +16,40 @@ a {
     color: black;
     text-decoration: none;
     padding: 5px;
+    background: #fff;
 }
 
 a:hover {
     background: #ddd;
+}
+
+h1 {
+  color: #fff;
+  font-size: 10rem;
+}
+
+h2, h3, h4 {
+  color: #fff;
+}
+
+.instructions {
+  background-color: rgba(49, 61, 71, 0.6);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
+}
+
+html, body {
+    height:100%;
+    background-image: url('./common/images/space-background.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
