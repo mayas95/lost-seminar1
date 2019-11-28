@@ -55,14 +55,27 @@ export default class Physics {
             max: maxb
         });
 
+
         if (!isColliding) {
+            setTimeout(function(){
+                document.getElementById("interaction").innerHTML = '';
+            }, 200);
+            // document.getElementById("interaction").innerHTML = '';
             return;
+        }
+
+        if (isColliding) {
+          if (b.interact === 1 || b.interact === 3) {
+            // console.log('interaction');
+            document.getElementById("interaction").innerHTML = 'Press SPACE to activate item';
+          }
         }
 
         if (isColliding && a.keys.Space) {
             if (b.interact === 1) {
                 b.interact = 2;
                 this.counter++;
+                document.getElementById("counter").innerHTML = '' + this.counter + '/3';
             }
             if (b.interact === 3) {
                 this.die = true;

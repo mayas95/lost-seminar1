@@ -48,11 +48,14 @@ setTimeout(function(){
 </head>
 <body>
     <div class="overlay">
+        <div id="help">*if the pointer doesn't lock on load, please click on the canvas to lock it</div>
         <a class="back" href="../index.html">Back</a>
         <div id="visual-timer">
             <div id="timer-wrapper"><span id="time">1:00</span></div>
-       </div>
+        </div>
+        <div id="counter">0/3</div>
     </div>
+    <div class="overlay-hint" id="interaction"></div>
      <!--<div>Oxygen runs out in <span id="time">01:00</span>!</div>-->
     <div class="fullscreen">
         <canvas></canvas>

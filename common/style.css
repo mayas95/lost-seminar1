@@ -23,6 +23,8 @@ body, html {
     left: 20px;
     top: 20px;
     width: 300px;
+    padding: 10px;
+    background-color: rgba(54, 54, 54, 0.5);
 }
 
 a.back {
@@ -39,6 +41,30 @@ a.back {
 
 a.back:hover {
     background: #ddd;
+}
+
+#counter {
+  margin-top: 10px;
+  color: #fff;
+}
+
+#help {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 10px;
+}
+
+#interaction {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.overlay-hint {
+    position: fixed;
+    left: 400px;
+    top: 20px;
+    width: 300px;
+    padding: 10px;
 }
 
 #visual-timer {
