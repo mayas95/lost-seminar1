@@ -23,11 +23,16 @@ class App extends Application {
         this.load('scene.json');
     }
 
+    endGameSuccess() {
+        this.camera.disable();
+        // console.log('SUCCESS');
+    }
+
     async load(uri) {
         const scene = await new SceneLoader().loadScene('scene.json');
         const builder = new SceneBuilder(scene);
         this.scene = builder.build();
-        this.physics = new Physics(this.scene);
+        this.physics = new Physics(this.scene, 0);
 
         // Find first camera.
         this.camera = null;
@@ -70,6 +75,9 @@ class App extends Application {
         }
 
         if (this.physics) {
+            if (this.physics.counter === 3) {
+              this.endGameSuccess();
+            }
             this.physics.update(dt);
         }
     }

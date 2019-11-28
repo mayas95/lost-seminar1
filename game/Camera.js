@@ -69,12 +69,14 @@ export default class Camera extends Node {
         document.addEventListener('mousemove', this.mousemoveHandler);
         document.addEventListener('keydown', this.keydownHandler);
         document.addEventListener('keyup', this.keyupHandler);
+        document.addEventListener('keyspace', this.keyspaceHandler);
     }
 
     disable() {
         document.removeEventListener('mousemove', this.mousemoveHandler);
         document.removeEventListener('keydown', this.keydownHandler);
         document.removeEventListener('keyup', this.keyupHandler);
+        document.removeEventListener('keyspace', this.keyspaceHandler);
 
         for (let key in this.keys) {
             this.keys[key] = false;
@@ -109,6 +111,10 @@ export default class Camera extends Node {
 
     keyupHandler(e) {
         this.keys[e.code] = false;
+    }
+
+    keyspaceHandler(e) {
+        this.keys[e.code] = true;
     }
 
 }

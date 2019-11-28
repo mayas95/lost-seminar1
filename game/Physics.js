@@ -3,8 +3,9 @@ const mat4 = glMatrix.mat4;
 
 export default class Physics {
 
-    constructor(scene) {
+    constructor(scene, counter) {
         this.scene = scene;
+        this.counter = counter;
     }
 
     update(dt) {
@@ -55,6 +56,11 @@ export default class Physics {
 
         if (!isColliding) {
             return;
+        }
+
+        if (isColliding && b.interact === 1 && a.keys.Space) {
+          b.interact = 2;
+          this.counter++;
         }
 
         // Move node A minimally to avoid collision.

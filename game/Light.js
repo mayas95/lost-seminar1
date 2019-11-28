@@ -7,7 +7,7 @@ export default class Light extends Node {
 
         Object.assign(this, {
             position         : [2, 5, 3],
-            ambient          : 5,
+            ambient          : 3,
             diffuse          : 0.8,
             specular         : 1,
             shininess        : 10,
