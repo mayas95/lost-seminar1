@@ -33,7 +33,8 @@ body, html {
     text-decoration: none;
     padding: 5px;
     background: #fff;
-    left: 48%;
+    left: 46%;
+    top: 100px;
 }
 
 a.back {
