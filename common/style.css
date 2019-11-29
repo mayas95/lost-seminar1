@@ -27,6 +27,15 @@ body, html {
     background-color: rgba(54, 54, 54, 0.5);
 }
 
+.button{
+    color: black;
+    position: absolute;
+    text-decoration: none;
+    padding: 5px;
+    background: #fff;
+    left: 48%;
+}
+
 a.back {
     display: block;
     padding: 5px 10px;
