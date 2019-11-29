@@ -4,7 +4,11 @@
 
 Start a local server in root direrectory based on personal preference eg.:
 
-`> python -m SimpleHTTPServer 8069`
+`> python -m SimpleHTTPServer 8070`
+
+Open your localhost url with the port that you specified. Eg.:
+
+`localhost:8070`
 
 You are welcomed with a starting game screen, where you can read the instructions for playing LOST!
 
