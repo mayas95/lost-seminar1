@@ -12,6 +12,8 @@ export default class Renderer {
         gl.clearColor(0, 0, 0, 1);
         gl.enable(gl.DEPTH_TEST);
         gl.enable(gl.CULL_FACE);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+        gl.enable (gl.BLEND) ;
 
         this.programs = WebGL.buildPrograms(gl, shaders);
 
